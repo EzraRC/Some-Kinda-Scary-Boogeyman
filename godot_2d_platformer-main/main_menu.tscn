@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh2na2l3qky5b"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_r02ye"]
+[ext_resource type="Texture2D" uid="uid://dktnxpp50nogi" path="res://graphics/main_menu/2Untitled.png" id="2_jabu5"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_r02ye")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 646.0
+texture = ExtResource("2_jabu5")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 581.0
+offset_right = 228.0
+offset_bottom = 640.0
+text = "created by
+Adam Boulos & Ezra Cooper"
+horizontal_alignment = 1
+
+[node name="Options" type="VFlowContainer" parent="."]
+offset_left = 313.0
+offset_top = 355.0
+offset_right = 870.0
+offset_bottom = 591.0
+
+[node name="StoryMode" type="Button" parent="Options"]
+layout_mode = 2
+text = "                                                       Story Mode                                                   .
+
+"
+
+[node name="Endless" type="Button" parent="Options"]
+layout_mode = 2
+text = "Endless
+
+"
+
+[node name="Options" type="Button" parent="Options"]
+layout_mode = 2
+text = "Options
+
+"
+
+[node name="Quit" type="Button" parent="Options"]
+layout_mode = 2
+text = "Quit
+
+"
+
+[connection signal="pressed" from="Options/StoryMode" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Options/Endless" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Options/Options" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="pressed" from="Options/Quit" to="." method="_on_quit_button_pressed"]
