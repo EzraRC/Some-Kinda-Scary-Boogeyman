@@ -4,6 +4,7 @@ extends Node2D
 func _ready():
 	print("MainMenu ready!")
 	$Options/StoryMode.grab_focus()
+	$mainMenuTheme.play()
 	
 	if !OS.has_feature("pc"):
 		$Options/Options.hide()
@@ -20,3 +21,6 @@ func _on_fullscreen_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+func _on_endless_mode_pressed():
+	get_tree().change_scene_to_file("res://level_3.tscn")

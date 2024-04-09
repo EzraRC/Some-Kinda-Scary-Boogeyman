@@ -3,7 +3,8 @@ extends Node2D
 @export var level_num = 0
 
 func _ready():
-	print("level ready")
+	print(level_num)
+	$gameplayTheme.play()
 
 func _on_door_player_entered(level):
 	get_tree().change_scene_to_file(level)
