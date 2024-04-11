@@ -13,13 +13,6 @@ offset_bottom = 647.0
 texture = ExtResource("2_8v52o")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
-offset_left = 529.0
-offset_top = 261.0
-offset_right = 637.0
-offset_bottom = 297.0
-text = "GAME OVER"
-
 [node name="Retry" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0.0117647)
 offset_left = 442.0

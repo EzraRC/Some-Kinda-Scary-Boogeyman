@@ -59,6 +59,7 @@ text = "Quit
 
 [node name="mainMenuTheme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_8krkn")
+volume_db = 24.0
 
 [connection signal="pressed" from="Options/StoryMode" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Options/EndlessMode" to="." method="_on_endless_mode_pressed"]

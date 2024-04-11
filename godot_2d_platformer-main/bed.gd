@@ -20,7 +20,7 @@ func _ready():
 func _process(delta):
 	# Decrease the progress bar over time
 	progressBar.value -= decreaseRate * BAR_SPEED * delta
-	progressBar.value = clamp(progressBar.value, 0, 10000)
+	progressBar.value = clamp(progressBar.value, 0, 8000)
 
 	# Check for player interaction
 	if canInteract:
@@ -29,7 +29,7 @@ func _process(delta):
 func interact():
 	# Increase the progress bar by a set amount
 	progressBar.value += 10
-	progressBar.value = clamp(progressBar.value, 0, 10000)
+	progressBar.value = clamp(progressBar.value, 0, 8000)
 
 func _on_body_entered(area):
 	print(area)

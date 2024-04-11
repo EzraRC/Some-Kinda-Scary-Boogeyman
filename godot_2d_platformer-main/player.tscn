@@ -1,16 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://cboi8hec4yf0c"]
+[gd_scene load_steps=14 format=3 uid="uid://cboi8hec4yf0c"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7msvu"]
 [ext_resource type="AudioStream" uid="uid://bwkldmy87gn66" path="res://jump.wav" id="3_brij0"]
 [ext_resource type="Texture2D" uid="uid://dubodaopxq45a" path="res://graphics/PixelSpaces Free Pack/Pre-made NPCs/Male.png" id="3_po4dp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1grjw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fulwy"]
 atlas = ExtResource("3_po4dp")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jvuaq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpcvf"]
 atlas = ExtResource("3_po4dp")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_usfs3"]
 atlas = ExtResource("3_po4dp")
@@ -23,10 +23,6 @@ region = Rect2(0, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_s808t"]
 atlas = ExtResource("3_po4dp")
 region = Rect2(32, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bpsfg"]
-atlas = ExtResource("3_po4dp")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_is4n8"]
 atlas = ExtResource("3_po4dp")
@@ -44,16 +40,16 @@ region = Rect2(48, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1grjw")
+"texture": SubResource("AtlasTexture_fulwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpcvf")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jvuaq")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_usfs3")
 }, {
@@ -68,9 +64,6 @@ animations = [{
 "speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bpsfg")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_is4n8")
 }, {
@@ -87,7 +80,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eynex"]
 radius = 6.0
-height = 16.0
+height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7msvu")
@@ -100,10 +93,11 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -3.5)
 sprite_frames = SubResource("SpriteFrames_yexds")
 animation = &"idle"
-frame_progress = 0.961836
+frame = 1
+frame_progress = 0.464285
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
@@ -112,3 +106,4 @@ shape = SubResource("CapsuleShape2D_eynex")
 [node name="JumpSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_brij0")
 volume_db = -2.0
+pitch_scale = 0.42

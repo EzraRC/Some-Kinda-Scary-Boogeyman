@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://qvhfg12a72kv"]
+
+[ext_resource type="Script" path="res://window.gd" id="1_l8csh"]
+[ext_resource type="Texture2D" uid="uid://gntg4vqhgdb1" path="res://graphics/PixelSpaces Free Pack/Furniture/Living Room/Window_square.png" id="1_mmbq8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oiun"]
+size = Vector2(16, 16)
+
+[node name="Window" type="Area2D"]
+script = ExtResource("1_l8csh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mmbq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1oiun")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

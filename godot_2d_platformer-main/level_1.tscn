@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cboi8hec4yf0c" path="res://player.tscn" id="3_kr5fw"]
 [ext_resource type="Texture2D" uid="uid://bp4qnej4n557q" path="res://graphics/PixelSpaces Free Pack/Backgrounds/Tree_medium.png" id="3_xbsmt"]
 [ext_resource type="PackedScene" uid="uid://clikcsot5ncta" path="res://door.tscn" id="4_hvikv"]
-[ext_resource type="AudioStream" uid="uid://1vgh2yhyxy3a" path="res://actiontheme-v3.ogg" id="7_4horr"]
+[ext_resource type="AudioStream" uid="uid://cmgwu66xwedua" path="res://audio/Scary Dark Ambient Music.mp3" id="9_4rdr6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6issp"]
 resource_name = "Tilemap"
@@ -1516,10 +1516,10 @@ position = Vector2(644, 244)
 level = "res://level_2.tscn"
 
 [node name="Player" parent="." instance=ExtResource("3_kr5fw")]
-position = Vector2(255, 200)
+position = Vector2(256, 205)
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_4horr")
+[node name="gameplayTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_4rdr6")
 volume_db = -80.0
 autoplay = true
 
