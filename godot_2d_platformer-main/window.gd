@@ -38,12 +38,14 @@ func interact():
 	breakTimer = 0
 	print("Window is now fixed")
 	$AnimatedSprite2D.play("fixed-window")
+	$fixing.play()
 
 func _on_Timer_timeout():
 	broken = true
 	print("Window is now broken")
 	timerRunning = false
 	$AnimatedSprite2D.play("broken-window")
+	$broken.play()
 
 func _on_body_entered(body):
 	canInteract = true

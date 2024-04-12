@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://qvhfg12a72kv"]
+[gd_scene load_steps=8 format=3 uid="uid://qvhfg12a72kv"]
 
 [ext_resource type="Script" path="res://window.gd" id="1_l8csh"]
 [ext_resource type="Texture2D" uid="uid://gntg4vqhgdb1" path="res://graphics/PixelSpaces Free Pack/Furniture/Living Room/Window_square.png" id="1_mmbq8"]
 [ext_resource type="Texture2D" uid="uid://w4b5du3y8bvl" path="res://graphics/PixelSpaces Free Pack/Furniture/Living Room/broken Window_square.png" id="2_585y1"]
+[ext_resource type="AudioStream" uid="uid://dohky3wmnwnw3" path="res://audio/Window glass breaking sound effect.mp3" id="4_k40gy"]
+[ext_resource type="AudioStream" uid="uid://801kt27aqwgx" path="res://audio/Knock On Window Sound Effect.mp3" id="5_agf3x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dodom"]
 animations = [{
@@ -43,6 +45,12 @@ animation = &"fixed-window"
 shape = SubResource("RectangleShape2D_1oiun")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="broken" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k40gy")
+
+[node name="fixing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_agf3x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
