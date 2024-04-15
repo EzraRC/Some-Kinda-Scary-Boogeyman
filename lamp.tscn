@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5v7ibgdxh2y2"]
+
+[ext_resource type="Texture2D" uid="uid://crh2pcjo6tkep" path="res://graphics/PixelSpaces Free Pack/Furniture/Bedroom/Lamp_stand_2.png" id="1_hjqwb"]
+[ext_resource type="Script" path="res://lamp.gd" id="1_kvn8w"]
+[ext_resource type="Texture2D" uid="uid://dbxbh6p2dm7ur" path="res://graphics/PixelSpaces Free Pack/Furniture/Bedroom/circle.png" id="2_adayj"]
+
+[node name="Lamp" type="Node2D"]
+script = ExtResource("1_kvn8w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hjqwb")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -7)
+color = Color(0.866667, 0.839216, 0.698039, 1)
+energy = 1.43
+texture = ExtResource("2_adayj")

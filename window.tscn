@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://qvhfg12a72kv"]
+
+[ext_resource type="Script" path="res://window.gd" id="1_l8csh"]
+[ext_resource type="Texture2D" uid="uid://gntg4vqhgdb1" path="res://graphics/PixelSpaces Free Pack/Furniture/Living Room/Window_square.png" id="1_mmbq8"]
+[ext_resource type="Texture2D" uid="uid://w4b5du3y8bvl" path="res://graphics/PixelSpaces Free Pack/Furniture/Living Room/broken Window_square.png" id="2_585y1"]
+[ext_resource type="AudioStream" uid="uid://dohky3wmnwnw3" path="res://audio/Window glass breaking sound effect.mp3" id="4_k40gy"]
+[ext_resource type="AudioStream" uid="uid://801kt27aqwgx" path="res://audio/Knock On Window Sound Effect.mp3" id="5_agf3x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dodom"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_585y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_585y1")
+}],
+"loop": true,
+"name": &"broken-window",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mmbq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_mmbq8")
+}],
+"loop": true,
+"name": &"fixed-window",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oiun"]
+size = Vector2(16, 16)
+
+[node name="Window" type="Area2D"]
+script = ExtResource("1_l8csh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dodom")
+animation = &"fixed-window"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1oiun")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="broken" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k40gy")
+
+[node name="fixing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_agf3x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
